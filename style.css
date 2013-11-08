@@ -1,0 +1,19 @@
+/*
+Theme Name: Pronamic WordPress Extensions
+Theme URI: http://www.pronamic.eu/
+Description: 
+Author: Pronamic
+Author URI: http://www.pronamic.eu/
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: pronamic, wordpress, wp, extension, plugin, theme
+*/
+
+body.admin-bar .navbar-fixed-top {
+	top: 28px;
+}
+
+body.admin-bar .jumbotron {
+	margin-top: 28px;	
+}
