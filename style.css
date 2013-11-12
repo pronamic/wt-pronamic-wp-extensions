@@ -17,3 +17,26 @@ body.admin-bar .navbar-fixed-top {
 body.admin-bar .jumbotron {
 	margin-top: 28px;	
 }
+
+/**
+ * Plugin
+ */
+.plugin {
+	
+}
+
+.plugin-header {
+	background: #EEE;
+}
+
+.plugin-description,
+.plugin-meta {
+	padding: 30px;
+}
+
+.plugin-nav {
+	margin-bottom: 30px;
+	
+	padding: 0 30px;
+}
+

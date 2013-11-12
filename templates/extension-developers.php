@@ -7,7 +7,9 @@ $slug = $post->post_name;
 
 $glob_pattern = ABSPATH . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . $slug . DIRECTORY_SEPARATOR . '*.zip';
 
-$files = glob( $glob_pattern );
+$glob = glob( $glob_pattern );
+
+$files = $glob == false ? array() : $glob;
 
 $file_versions = array();
 

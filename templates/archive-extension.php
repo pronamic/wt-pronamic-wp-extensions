@@ -13,8 +13,7 @@
 					<tr>
 						<th scope="col"><?php _e( 'Title', 'pwe' ); ?></th>
 						<th scope="col"><?php _e( 'Slug', 'pwe' ); ?></th>
-						<th scope="col"><?php _e( 'Version Control', 'pwe' ); ?></th>			
-						<th scope="col"><?php _e( 'Stable Version', 'pwe' ); ?></th>				
+						<th scope="col"><?php _e( 'Stable Version', 'pwe' ); ?></th>
 					</tr>
 				</thead>
 	
@@ -30,13 +29,6 @@
 							</td>
 							<td>
 								<?php echo $post->post_name; ?>
-							</td>
-							<td>
-								<?php 
-								
-								
-								
-								?>
 							</td>
 							<td>
 								<?php echo get_post_meta( $post->ID, '_pronamic_extension_stable_version', true ); ?>
