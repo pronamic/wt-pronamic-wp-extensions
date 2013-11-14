@@ -2,7 +2,19 @@
 
 global $post;
 
-$path = get_option( 'pronamic_wp_plugins_path' );
+$path = false;
+
+switch ( $post->post_type ) {
+	case 'pronamic_plugin':
+		$path = get_option( 'pronamic_wp_plugins_path' );
+
+		break;
+	case 'pronamic_theme':
+		$path = get_option( 'pronamic_wp_themes_path' );
+
+		break;
+}
+
 $slug = $post->post_name;
 
 $glob_pattern = ABSPATH . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . $slug . DIRECTORY_SEPARATOR . '*.zip';
