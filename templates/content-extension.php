@@ -1,3 +1,10 @@
+<?php 
+
+global $post;
+
+$extension = new Pronamic_WP_ExtensionsPlugin_ExtensionInfo( $post );
+
+?>
 <div class="plugin" itemtype="http://schema.org/SoftwareApplication" itemscope="">
 	<div class="plugin-header">
 		<div class="plugin-title">
@@ -19,7 +26,14 @@
 	
 			<div class="col-md-3">
 				<div class="plugin-meta">
-					<span class="label label-default" itemprop="softwareVersion"><?php echo get_post_meta( $post->ID, '_pronamic_extension_stable_version', true ); ?></span>
+					<?php 
+					
+					$version = $extension->get_version();
+					$url     = $extension->get_download_link();
+					
+					?>
+					<a href="<?php echo esc_attr( $url ); ?>" class="btn btn-primary"><?php _e( 'Download', 'pwe' ); ?> <span itemprop="softwareVersion"><?php echo $version; ?></span></a>
+					
 				</div>
 			</div>
 		</div>
