@@ -57,3 +57,19 @@ function pwe_title() {
 		bloginfo( 'name' );
 	}
 }
+
+/**
+ * Posts per page
+ * 
+ * @param WP_Query $query
+ * @return WP_Query
+ */
+function pwe_query_posts_per_page( $query ) {
+	if ( $query->is_main_query() && $query->is_post_type_archive( array( 'pronamic_plugin', 'pronamic_theme' ) ) ) {
+		$query->set( 'posts_per_page', 100 );
+	}
+
+	return $query;
+}
+
+add_filter( 'pre_get_posts', 'pwe_query_posts_per_page' );
