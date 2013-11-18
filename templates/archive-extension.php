@@ -13,6 +13,7 @@
 					<tr>
 						<th scope="col"><?php _e( 'Title', 'pwe' ); ?></th>
 						<th scope="col"><?php _e( 'Slug', 'pwe' ); ?></th>
+						<th scope="col"><?php _e( 'WordPress.org', 'pwe' ); ?></th>
 						<th scope="col"><?php _e( 'Stable Version', 'pwe' ); ?></th>
 					</tr>
 				</thead>
@@ -29,6 +30,23 @@
 							</td>
 							<td>
 								<?php echo $post->post_name; ?>
+							</td>
+							<td>
+								<?php 
+								
+								$slug = get_post_meta( $post->ID, '_pronamic_extension_wp_org_slug', true );
+								
+								if ( empty( $slug ) ) {
+
+								} else {
+									printf(
+										'<a href="%s" target="_blank">%s</a>',
+										sprintf( 'http://wordpress.org/plugins/%s/', $slug ),
+										__( 'WordPress.org', 'pwe' )
+									);
+								}
+								
+								?>
 							</td>
 							<td>
 								<?php echo get_post_meta( $post->ID, '_pronamic_extension_stable_version', true ); ?>
